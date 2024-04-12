@@ -2,13 +2,21 @@
     <header>
             <nav class="header-bar container">
                 <div>
-                    <p>Donna Uomo Bambini</p>
+                    <ul class="row gap-5">
+                        <li>Donna</li>
+                        <li>Uomo</li>
+                        <li>Bambini</li>
+                    </ul>
                 </div>
                 <div>
                     <img src="/boolean-logo.png" alt="">
                 </div>
-                <div>
-                    <p>&#127900;&#127900;&#127900;</p>
+                <div >
+                    <ul class="icon-header row gap-5"> 
+                        <li>&#127900;</li>
+                        <li>&#127900;</li>
+                        <li>&#127900;</li>
+                    </ul>
                 </div>
             </nav>
         </header>
@@ -31,8 +39,11 @@
     align-items: center;
     margin-bottom: 40px;
 }
-.header-bar p{
-    font-size: 15px;
+.gap-5{
+    gap: 5px;
+}
+.icon-header{
+    font-size: 19px;
 }
 .header-bar img{
     display: flex;

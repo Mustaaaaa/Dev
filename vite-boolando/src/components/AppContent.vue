@@ -3,106 +3,23 @@
             <section class="section">
                 <div class="container">
                     <div class="flex row">
-                        <div class="col-3">
+                        <div class="col-3"
+                        v-for="product in products"
+                        >
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="/1.webp" alt="">
+                                    <img :src="'/'+ product.frontImage" alt="">
                                     <span class="heart-icon">&hearts;</span>
                                     <span class="badge bg-red">-50%</span>
                                     <span class="second-badge badge bg-green">Sostenibilità</span>
                                     <div class="overlay">
-                                        <img src="/1b.webp" alt="">
+                                        <img :src="'/'+ product.backImage" alt="">
                                     </div>
                                 </div>
                                 <div>
-                                    <p>Levi's</p>
-                                    <h4>RELAXED FIT TEE UNISEX</h4>
-                                    <p><span class="red">14,99&euro;</span><span class="line-throught">29,99&euro;</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="/2.webp" alt="">
-                                    <span class="heart-icon">&hearts;</span>
-                                    <span class="badge bg-red">-30%</span>
-                                    <div class="overlay">
-                                        <img src="/2b.webp" alt="">
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>Guess</p>
-                                    <h4>ROSES TEE</h4>
-                                    <p><span class="red">20,99&euro;</span><span class="line-throught">29,99&euro;</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="/3.webp" alt="">
-                                    <span class="heart-icon">&hearts;</span>
-                                    <span class="badge bg-red">-30%</span>
-                                    <div class="overlay">
-                                        <img src="/3b.webp" alt="">
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>Come Zucchero Filato</p>
-                                    <h4>VOGLIA DI COLORI PASTELLO</h4>
-                                    <p><span class="red">129,99&euro;</span><span class="line-throught">184,99&euro;</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="/4.webp" alt="">
-                                    <span class="heart-icon">&hearts;</span>
-                                    <span class="badge bg-red">-50%</span>
-                                    <span class="second-badge badge bg-green">Sostenibilità</span>
-                                    <div class="overlay">
-                                        <img src="/4b.webp" alt="">
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>Levi's</p>
-                                    <h4>TEE UNISEX</h4>
-                                    <p><span class="red">14,99&euro;</span><span class="line-throught">29,99&euro;</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="/5.webp" alt="">
-                                    <span class="heart-icon">&hearts;</span>
-                                    <div class="overlay">
-                                        <img src="/5b.webp" alt="">
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>Maya Deluxe</p>
-                                    <h4>STRIPE BODICE</h4>
-                                    <p><span class="red">99,99&euro;</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="/6.webp" alt="">
-                                    <span class="heart-icon">&hearts;</span>
-                                    <span class="badge bg-green">Sostenibilità</span>
-                                    <div class="overlay">
-                                        <img src="/6b.webp" alt="">
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>Esprit</p>
-                                    <h4>MAGLIONE - BLACK</h4>
-                                    <p><span class="red">29,99&euro;</span></p>
+                                    <p>{{product.brand}}</p>
+                                    <h4>{{product.name}}</h4>
+                                    <p><span class="red">{{product.price}}&euro;</span><span class="line-throught">29,99&euro;</span></p>
                                 </div>
                             </div>
                         </div>
@@ -113,8 +30,115 @@
 </template>
 
 <script>
-    export default {
-        
+export default {
+        data() {
+            return {
+                "products": [
+    {
+      "id": 1,
+      "frontImage": "1.webp",
+      "backImage": "1b.webp",
+      "brand": "Levi's",
+      "name": "Relaxed Fit",
+      "price": 29.99,
+      "isInFavorites": true,
+      "badges": [
+        {
+          "type": "tag",
+          "value": "Sostenibilità"
+        },
+        {
+          "type": "discount",
+          "value": "-50%"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "frontImage": "2.webp",
+      "backImage": "2b.webp",
+      "brand": "Guess",
+      "name": "Roses Tee",
+      "price": 20.99,
+      "isInFavorites": true,
+      "badges": [
+        {
+          "type": "discount",
+          "value": "-30%"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "frontImage": "3.webp",
+      "backImage": "3b.webp",
+      "brand": "Come Zucchero Filato",
+      "name": "Voglia di colori pastello",
+      "price": 129.99,
+      "isInFavorites": false,
+      "badges": [
+        {
+          "type": "discount",
+          "value": "-30%"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "frontImage": "4.webp",
+      "backImage": "4b.webp",
+      "brand": "Levi's",
+      "name": "Tee Unisex",
+      "price": 14.99,
+      "isInFavorites": false,
+      "badges": [
+        {
+          "type": "tag",
+          "value": "Sostenibilità"
+        },
+        {
+          "type": "discount",
+          "value": "-50%"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "frontImage": "5.webp",
+      "backImage": "5b.webp",
+      "brand": "Maya Deluxe",
+      "name": "Stripe Bodice",
+      "price": 99.99,
+      "isInFavorites": true,
+      "badges": [
+        {
+          "type": "tag",
+          "value": "Sostenibilità"
+        },
+        {
+          "type": "discount",
+          "value": "-50%"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "frontImage": "6.webp",
+      "backImage": "6b.webp",
+      "brand": "Esprit",
+      "name": "Maglione - Black",
+      "price": 29.99,
+      "isInFavorites": true,
+      "badges": [
+        {
+          "type": "tag",
+          "value": "Sostenibilità"
+        }
+      ]
+    }
+  ]
+            }
+        },
     }
 </script>
 
