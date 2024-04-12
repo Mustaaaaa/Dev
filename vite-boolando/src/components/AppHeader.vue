@@ -5,7 +5,7 @@
                     <p>Donna Uomo Bambini</p>
                 </div>
                 <div>
-                    <img src="./img/boolean-logo.png ." alt="">
+                    <img src="/boolean-logo.png" alt="">
                 </div>
                 <div>
                     <p>&#127900;&#127900;&#127900;</p>
