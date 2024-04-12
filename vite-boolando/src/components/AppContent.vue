@@ -138,9 +138,10 @@
     position: absolute;
     bottom: 35px;
     z-index: 10;
+    left: 0px;
 }
 .card-image .second-badge{
-    left: 35px
+    left: 40px
 }
 .heart-icon{
     position: absolute;
